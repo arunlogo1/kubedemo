@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-app-deploy
+  labels:
+    name: worker-app-pod
+    app: worker-app
+spec:
+  selector:
+    matchLabels:
+      name: worker-app-pod
+      app: worker-app
+  replicas: 2
+  template:
+    metadata:
+      name: worker-app-pod
+      labels:
+        name: worker-app-pod
+        app: worker-app
+    spec:
+      containers:
+        - name: worker-app
+          image: eesprit/voting-app-worker
+      
+    
