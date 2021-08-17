@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: myapp-pod
+spec:
+  containers:
+    - name: myapp
+      image: skkp/poc
+      command: ["./test.sh dr1 dr2 f1 f2"]
+  imagePullSecrets:
+    - name: secret1
+      
